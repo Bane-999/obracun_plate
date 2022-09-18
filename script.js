@@ -10,30 +10,40 @@ function plata(hours) {
         e = "evra";
     }
     display.innerText = `${plata} ${e} (${plata*117} dinar/a)`;
+    list_item += `<li>broj radnih dana:<b> ${days}</b> | intenzitet rada:<b> ${procentage_input.options[procentage_input.selectedIndex].text}</b> | ukupan broj sati:<b> ${hours}</b> | potrebno vreme:<b> ${estimate(String(hours).split("+"))}dan/a</b> | plata:<b> ${plata}e (${plata*117} din.)</b></li>`;
+    list.innerHTML = list_item;
 }
 
-function estimate(arr) {
+function arrSum(arr) {
     let sum = 0;
     arr.forEach((x) => {
         num = parseInt(x);
         sum += num;
     })
+    return sum;
+}
 
+function renderDays(day) {
+    if([1,21,31,41,51,61,71,81,91].includes(day)) {
+        display.innerText = `Potrebno vreme je: ${day} dan`;
+    }
+    else if(day === 'error') {
+        display.innerText = `Greska!`;
+    }
+    else {
+        display.innerText = `Potrebno vreme je: ${day} dana`;
+    }
+    return;
+}
+
+function estimate(arr) {
+    sum = arrSum(arr);
     for(let i=0; i < 100; i++) {
         if( sum <= ((i+1)*procent).toFixed(1) ) {
-            if([1,21,31,41,51,61,71,81,91].includes(i+1)) {
-                display.innerText = `Potrebno vreme je: ${i+1} dan`;
-            }
-            else {
-                display.innerText = `Potrebno vreme je: ${i+1} dana`;
-            }
-            return sum;
-        }
-        else {
-            display.innerText = `Greska!`;
+            return (i+1);
         }
     }
-    return sum;
+    return 'error';
 }
 
 const display = document.getElementById("display");
@@ -42,6 +52,8 @@ const button2 = document.querySelector(".btn2");
 const input = document.getElementById("vreme");
 const days_input = document.querySelector('#select1');
 const procentage_input = document.querySelector('#select2');
+const list = document.querySelector('.info');
+let list_item = ``;
 let days = 19;
 let procent = 6.5;
 
@@ -55,8 +67,9 @@ procentage_input.addEventListener('change', () => {
 
 button2.addEventListener('click',() => {
     // issues
-    sum = estimate((input.value).split("+"));
-    input.value = sum;
+    result = estimate((input.value).split("+"));
+    renderDays(result);
+    input.value = arrSum((input.value).split("+"));
 });
 
 button.addEventListener('click',() => {

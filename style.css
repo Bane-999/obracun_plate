@@ -2,6 +2,11 @@ body {
     padding: 30px;
 }
 
+@font-face {
+    font-family: 'courier_prime';
+    src: url(./Courier_Prime/CourierPrime-Regular.ttf);
+}
+
 .container {
     display: flex;
     gap: 30px;
@@ -72,4 +77,10 @@ p {
 img {
     width: 30px;
     height: auto;
+}
+
+.info {
+    margin-top: 90px;
+    font-family: 'courier_prime';
+    color: #3c3939;
 }
