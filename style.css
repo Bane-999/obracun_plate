@@ -1,0 +1,75 @@
+body {
+    padding: 30px;
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+}
+
+.box1, .box2 {
+    background-color: rgb(206, 254, 238);
+    height: 300px;
+    flex: 1 1 543px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+                rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+                rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    padding: 60px;
+}
+
+.box1 {
+    align-items: center;
+}
+
+.box2 {
+    align-items: flex-start;
+}
+
+.element {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.element.one {
+    flex: 1 1 auto;
+}
+
+.btn {
+    height: 64px;
+    width: 212px;
+    align-self: center;
+}
+
+#display {
+    font-size: 40px;
+    background-color: aliceblue;
+    min-width: 135px;
+    min-height: 55px;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+p {
+    color: grey;
+    margin-left: 30px;
+}
+
+#vreme {
+    height: 30px;
+}
+
+#days {
+    width: 80px;
+}
+
+img {
+    width: 30px;
+    height: auto;
+}

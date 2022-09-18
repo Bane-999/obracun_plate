@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">
+            <div id="display"></div>
+        </div>
+        <div class="box2">
+            <label for="days">Broj radnih dana:</label>
+            <select name="days" id="select1">
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+            </select>
+            <br>
+            <label for="procent">Intenzitet rada:</label>
+            <select name="procent" id="select2">
+                <option value="6.5">100%</option>
+                <option value="5.85">90%</option>
+                <option value="5.2">80%</option>
+                <option value="4.55">70%</option>
+                <option value="3.9">60%</option>
+            </select>
+            <br>
+            <div class="element one">
+                <input type="text" name="input_field" id="vreme">
+                <p><em>*Unesi ukupan broj sati (npr. 57 ili 13+2+32+10), i klikni na dugme 'issues'.<br>
+                    Nakon toga klikni na dugme 'obracun plate'.</em> </p>
+            </div>
+            <br>
+            <div class="element">
+                <button title="eg. 12+28+3.5" class="btn btn2">Issues</button>
+                <img src="./right.png">
+                <button title="eg. 86" class="btn btn1">Obracun plate</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
